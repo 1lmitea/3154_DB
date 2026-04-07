@@ -67,3 +67,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 **NIM:** 24.12.3154
 **Nama:** Mitashya Calysnagefin Titansilah
+
+https://3154-db-main-4i4rud.free.laravel.cloud/
