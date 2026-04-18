@@ -71,13 +71,16 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ---
 
-**Halaman Sisi Admin:**
+## Halaman Sisi Admin
+
 1. **Halaman Dashboard:** https://3154-db-main-4i4rud.free.laravel.cloud/admin
 2. **Halaman Event:** https://3154-db-main-4i4rud.free.laravel.cloud/admin/events
 3. **Halaman Transaksi:** https://3154-db-main-4i4rud.free.laravel.cloud/admin/transactions
 
-**Halaman Sisi User:**
+## Halaman Sisi User
+
 4. **Halaman Beranda:** https://3154-db-main-4i4rud.free.laravel.cloud/
 5. **Halaman Detail Event:** https://3154-db-main-4i4rud.free.laravel.cloud/detail-event
 6. **Halaman Checkout:** https://3154-db-main-4i4rud.free.laravel.cloud/checkout
 7. **Halaman Tiket:** https://3154-db-main-4i4rud.free.laravel.cloud/ticket
+
