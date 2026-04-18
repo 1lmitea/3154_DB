@@ -78,5 +78,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 **Halaman Sisi User:**
 4. **Halaman Beranda:** https://3154-db-main-4i4rud.free.laravel.cloud/
-5. **Halaman Detail Event:** https://3154-db-main-4i4rud.free.laravel.cloud/detail-event
-6. **Halaman Checkout:** https://3154-db-main-4i4rud.free.laravel.cloud/checkout
+5. **Halaman Detail Event:** https://3154-db-main-4i4rud.free.laravel.cloud/event-detail.html
+6. **Halaman Checkout:** https://3154-db-main-4i4rud.free.laravel.cloud/checkout.html
