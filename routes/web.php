@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// --- Rute Wajib (Sesuai Modul) ---
+// --- Rute Wajib  ---
 Route::get('/profil', function () {
     return view('profil');
 });
@@ -20,9 +20,21 @@ Route::get('/bantuan', function () {
     return view('bantuan');
 });
 
-// --- Rute Tambahan (Navigasi) ---
+// --- Rute Navigasi ---
 Route::get('/kontak', function () {
     return view('kontak');
+});
+
+Route::get('/detail-event', function () {
+    return view('event-detail');
+});
+
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
+Route::get('/ticket', function () {
+    return view('ticket');
 });
 
 use App\Http\Controllers\Admin\DashboardController;
@@ -35,7 +47,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/events', [AdminEventController::class, 'indexAdmin'])->name('events.index');
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
-    // --- TAMBAHAN BARU: Rute untuk Laporan Transaksi ---
+    // Rute untuk Laporan Transaksi ---
     Route::get('/transactions', function () {
         return view('admin.transactions');
     });
