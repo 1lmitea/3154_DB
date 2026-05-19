@@ -1,10 +1,20 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\Admin\PartnerController;
 
 // --- Halaman Utama (Home) ---
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Rute Login & Logout
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // --- Rute Wajib  ---
 Route::get('/profil', function () {
@@ -36,15 +46,13 @@ Route::get('/ticket', function () {
     return view('ticket');
 });
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\EventController as AdminEventController;
-use App\Http\Controllers\Admin\CategoryController;
-
 // --- Rute Sisi Admin ---
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('events', AdminEventController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('partners', PartnerController::class);
 
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('/transactions', function () {

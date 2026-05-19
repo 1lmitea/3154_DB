@@ -94,4 +94,24 @@
         @endforelse
     </div>
 </section>
+<section class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-100 mt-10">
+        <div class="text-center mb-10">
+            <p class="text-sm font-bold tracking-widest text-slate-400 uppercase mb-2">Didukung Oleh</p>
+            <h2 class="text-2xl font-extrabold text-slate-800">Partner & Sponsor Resmi</h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+            @forelse($partners as $partner)
+                <div class="group flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100">
+                    @if($partner->logo_url)
+                        <img src="{{ asset('storage/' . $partner->logo_url) }}" alt="{{ $partner->name }}" class="h-12 md:h-16 w-auto object-contain transform group-hover:scale-110 transition duration-300">
+                    @else
+                        <span class="text-xl font-black text-slate-400 transform group-hover:scale-110 transition duration-300">{{ $partner->name }}</span>
+                    @endif
+                </div>
+            @empty
+                <p class="text-slate-400 font-medium italic">Belum ada partner yang terdaftar.</p>
+            @endforelse
+        </div>
+    </section>
 @endsection

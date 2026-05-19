@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -89,6 +90,9 @@ class EventController extends Controller
 
         // Logika untuk menyimpan gambar baru jika admin mengunggahnya
         if ($request->hasFile('poster')) {
+            if ($event->poster_path) {
+            Storage::disk('public')->delete($event->poster_path);
+        }
             $data['poster_path'] = $request->file('poster')->store('posters', 'public');
         }
 

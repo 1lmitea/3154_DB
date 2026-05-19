@@ -59,6 +59,22 @@
             </div>
         </div>
 
+        <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Poster Event</label>
+            <div class="flex items-start gap-6 p-4 border border-dashed border-slate-200 rounded-2xl bg-slate-50/50">
+                @if($event->poster_path)
+                <div class="shrink-0 text-center">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Poster Saat Ini</p>
+                    <img src="{{ asset('storage/'.$event->poster_path) }}" class="w-24 h-32 rounded-xl object-cover shadow-md border-2 border-white">
+                </div>
+                @endif
+                <div class="flex-1">
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Pilih file baru jika ingin mengganti poster. Kosongkan jika tidak ingin mengubah gambar.</p>
+                    <input type="file" name="poster" accept="image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                    @error('poster') <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span> @enderror
+                </div>
+            </div>
+        </div>
         <div class="pt-4 flex justify-end gap-4 border-t border-slate-100">
             <a href="{{ route('admin.events.index') }}" class="px-6 py-4 text-slate-500 font-bold hover:text-slate-800 transition">Batal</a>
             <button type="submit" class="px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition">Simpan Perubahan</button>
