@@ -71,6 +71,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ---
 
+## INFORMASI PENGUMPULAN UTS 
+- **Link Branch Ujian (GitHub):** https://github.com/1lmitea/amikomeventhub_3154/tree/ujian-tengah-semester-24.12.3154
+- **Link Video Demonstrasi (Google Drive):** https://drive.google.com/drive/folders/193eGDtYO5NWrWowFjBIlLp-MhoPWHZ6w?usp=sharing 
+
 ## Halaman Sisi Admin
 
 1. **Halaman Dashboard:** https://3154-db-main-4i4rud.free.laravel.cloud/admin
